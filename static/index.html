@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis - Women Safety Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar glass-panel">
+        <div class="brand">
+            <i class="fa-solid fa-shield-halved"></i>
+            Aegis AI
+        </div>
+        <div class="nav-menu">
+            <a href="#" class="nav-item active"><i class="fa-solid fa-desktop"></i> Live Monitor</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-video"></i> Recordings</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-users-viewfinder"></i> Face Database</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+        </div>
+        
+        <div style="margin-top: auto;">
+            <div class="panel-header" style="font-size: 0.9rem;">Known Threats Database</div>
+            <div class="criminals-db glass-panel" style="padding: 10px; border-radius: 8px;">
+                <div class="criminal-card">
+                    <img src="/static/criminals/Akshay.jpg" alt="Threat 1" onerror="this.src='https://i.pravatar.cc/150?u=akshay'">
+                    <span>Akshay</span>
+                </div>
+                <div class="criminal-card">
+                    <img src="https://i.pravatar.cc/150?u=1" alt="Threat 2">
+                    <span>ID: X-92</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="glass-panel" style="padding: 0; padding-bottom: 20px;">
+            <div class="video-container" id="videoContainer">
+                <img id="videoFeed" src="/video_feed" alt="Live Camera Feed">
+                <div class="video-overlay">
+                    <div class="status-badge status-live">LIVE</div>
+                    <div class="status-badge" style="background: rgba(0,0,0,0.5); color: white;" id="fpsCounter">FPS: --</div>
+                </div>
+            </div>
+            
+            <div class="controls" style="padding: 0 20px; margin-top: 15px;">
+                <h3 style="font-size: 1.1rem; font-weight: 500;">Live Feed Processing</h3>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Overlay Heatmap</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="heatmapToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card glass-panel">
+                <div class="stat-label">Total People</div>
+                <div class="stat-value" id="statPeople">0</div>
+            </div>
+            <div class="stat-card glass-panel">
+                <div class="stat-label">Females</div>
+                <div class="stat-value" id="statFemales">0</div>
+            </div>
+            <div class="stat-card glass-panel">
+                <div class="stat-label">Males</div>
+                <div class="stat-value" id="statMales">0</div>
+            </div>
+            <div class="stat-card glass-panel" id="riskCard">
+                <div class="stat-label">Risk Level</div>
+                <div class="stat-value" id="statRisk">LOW</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Right Panel -->
+    <aside class="right-panel glass-panel">
+        <div class="panel-header">
+            Incident Alerts
+            <span style="font-size: 0.8rem; background: rgba(255,51,102,0.2); color: var(--accent-red); padding: 4px 8px; border-radius: 12px;">Live</span>
+        </div>
+        <div class="alerts-feed" id="alertsFeed">
+            <!-- Alerts dynamically injected here -->
+        </div>
+    </aside>
+</div>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+opencv-python
+numpy
+sounddevice
+torch
+pillow
+mediapipe==0.10.14
+twilio
+transformers
+ultralytics
